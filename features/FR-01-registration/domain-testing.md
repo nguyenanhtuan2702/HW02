@@ -53,11 +53,6 @@ Người dùng cung cấp đầy đủ thông tin và đáp ứng các điều k
 
 Hệ thống từ chối yêu cầu đăng ký và thông báo lỗi phù hợp với điều kiện chưa được đáp ứng. Tài khoản không được tạo thành công.
 
-### 1.6. Kết luận bước 1
-
-Sau khi phân tích chức năng FR-01, ta xác định được bốn biến đầu vào chính gồm họ và tên, email, mật khẩu và xác nhận mật khẩu; cùng ba nhóm kết quả đầu ra gồm kết quả đăng ký, thông báo kiểm tra dữ liệu và kết quả chuyển trang.
-
-Các điều kiện đầu vào đã xác định sẽ được sử dụng làm cơ sở để thực hiện **Bước 2 – Xác định các lớp tương đương**, trong đó mỗi điều kiện được phân tích thành những lớp hợp lệ và không hợp lệ phù hợp với đặc tả.
 
 ## Bước 2. Xác định các lớp tương đương
 
@@ -161,8 +156,220 @@ Tổng cộng, bước phân hoạch đã xác định 19 lớp tương đương
 
 Lưu ý rằng các lớp của những điều kiện mật khẩu khác nhau có thể giao nhau. Ví dụ, một mật khẩu vừa quá ngắn vừa không có chữ số có thể vi phạm đồng thời hai điều kiện. Khi lựa chọn test case ở Bước 3, cần thiết kế dữ liệu để kiểm tra riêng từng lớp Invalid và tránh vi phạm nhiều điều kiện cùng lúc.
 
-### 2.4. Kết luận Bước 2
+## Bước 3. Lựa chọn test case đại diện
 
-Các lớp tương đương đã được xác định dựa trên những điều kiện đầu vào của chức năng đăng ký tài khoản. Các lớp Valid đại diện cho dữ liệu đáp ứng điều kiện tương ứng; các lớp Invalid đại diện cho những trường hợp vi phạm yêu cầu.
+### 3.1. Nguyên tắc lựa chọn test case
 
-Bảng phân hoạch trên là cơ sở để thực hiện Bước 3 – Lựa chọn test case đại diện cho từng lớp tương đương, bảo đảm các lớp đã xác định đều được bao phủ.
+Dựa trên tập phân hoạch tương đương đã xác định ở Bước 2, các test case được lựa chọn theo những nguyên tắc sau:
+
+- Đối với các lớp tương đương hợp lệ, kết hợp nhiều lớp trong cùng một test case nếu các điều kiện có thể đồng thời được thỏa mãn.
+- Đối với các lớp tương đương không hợp lệ, mỗi test case tập trung kiểm tra một lớp Invalid, trong khi các điều kiện còn lại được thiết lập hợp lệ.
+- Mỗi test case phải có dữ liệu đầu vào và kết quả mong đợi rõ ràng.
+- Các dữ liệu kiểm thử phải được chuẩn bị phù hợp với môi trường thực tế. Trường hợp cần kiểm tra email trùng lặp, phải có sẵn tài khoản sử dụng email đó.
+
+### 3.2. Bộ test case bao phủ các lớp tương đương
+
+Bảng dưới đây trình bày các test case được lựa chọn để bao phủ 19 lớp tương đương của chức năng FR-01.
+
+| Mã test case | Lớp tương đương được kiểm tra | Mục đích |
+|---|---|---|
+| TC01 | EC01, EC03, EC07, EC09, EC11, EC13, EC15, EC17 | Kiểm tra đăng ký với dữ liệu hợp lệ |
+| TC02 | EC02 | Kiểm tra họ và tên bị bỏ trống |
+| TC03 | EC04 | Kiểm tra email bị bỏ trống |
+| TC04 | EC05 | Kiểm tra email sai định dạng |
+| TC05 | EC06 | Kiểm tra email đã tồn tại |
+| TC06 | EC08 | Kiểm tra mật khẩu ngắn hơn 8 ký tự |
+| TC07 | EC10 | Kiểm tra mật khẩu không có chữ hoa |
+| TC08 | EC12 | Kiểm tra mật khẩu không có chữ thường |
+| TC09 | EC14 | Kiểm tra mật khẩu không có chữ số |
+| TC10 | EC16 | Kiểm tra mật khẩu không có ký tự đặc biệt được chấp nhận |
+| TC11 | EC18 | Kiểm tra trường xác nhận mật khẩu bị bỏ trống |
+| TC12 | EC19 | Kiểm tra mật khẩu xác nhận không khớp |
+
+Như vậy, bộ test case ban đầu gồm 12 test case, trong đó có 1 test case hợp lệ kết hợp nhiều lớp Valid và 11 test case tập trung vào các lớp Invalid.
+
+### 3.3. Chi tiết test case
+
+Để tránh các điều kiện không hợp lệ ảnh hưởng lẫn nhau, các test case dưới đây được xây dựng dựa trên nguyên tắc chỉ thay đổi dữ liệu thuộc lớp đang kiểm tra.
+
+#### TC01 – Đăng ký thành công
+
+**Dữ liệu đầu vào:**
+
+| Trường | Giá trị |
+|---|---|
+| Họ và tên | Nguyễn Văn An |
+| Email | Email hợp lệ, chưa tồn tại trong hệ thống |
+| Mật khẩu | `Abcdef1!` |
+| Xác nhận mật khẩu | `Abcdef1!` |
+
+**Các lớp được bao phủ:** EC01, EC03, EC07, EC09, EC11, EC13, EC15, EC17.
+
+**Kết quả mong đợi:** Hệ thống tạo tài khoản thành công và chuyển người dùng đến trang đăng nhập.
+
+#### TC02 – Bỏ trống họ và tên
+
+**Dữ liệu đầu vào:**
+
+- Họ và tên: để trống.
+- Email: email hợp lệ, chưa tồn tại.
+- Mật khẩu: `Abcdef1!`.
+- Xác nhận mật khẩu: `Abcdef1!`.
+
+**Lớp được kiểm tra:** EC02.
+
+**Kết quả mong đợi:** Hệ thống từ chối đăng ký và thông báo họ và tên là trường bắt buộc.
+
+#### TC03 – Bỏ trống email
+
+**Dữ liệu đầu vào:**
+
+- Họ và tên: Nguyễn Văn An.
+- Email: để trống.
+- Mật khẩu: `Abcdef1!`.
+- Xác nhận mật khẩu: `Abcdef1!`.
+
+**Lớp được kiểm tra:** EC04.
+
+**Kết quả mong đợi:** Hệ thống từ chối đăng ký và thông báo email là trường bắt buộc.
+
+#### TC04 – Email sai định dạng
+
+**Dữ liệu đầu vào:**
+
+- Họ và tên: Nguyễn Văn An.
+- Email: `nguyen-at-example.com`.
+- Mật khẩu: `Abcdef1!`.
+- Xác nhận mật khẩu: `Abcdef1!`.
+
+**Lớp được kiểm tra:** EC05.
+
+**Kết quả mong đợi:** Hệ thống từ chối đăng ký vì email không đúng định dạng.
+
+#### TC05 – Email đã tồn tại
+
+**Điều kiện tiên quyết:** Trong hệ thống đã có một tài khoản sử dụng email được chọn để kiểm thử.
+
+**Dữ liệu đầu vào:**
+
+- Họ và tên: Nguyễn Văn An.
+- Email: email hợp lệ đã được sử dụng bởi tài khoản có sẵn.
+- Mật khẩu: `Abcdef1!`.
+- Xác nhận mật khẩu: `Abcdef1!`.
+
+**Lớp được kiểm tra:** EC06.
+
+**Kết quả mong đợi:** Hệ thống từ chối đăng ký và thông báo email đã được sử dụng.
+
+#### TC06 – Mật khẩu ngắn hơn 8 ký tự
+
+**Dữ liệu đầu vào:**
+
+- Họ và tên: Nguyễn Văn An.
+- Email: email hợp lệ, chưa tồn tại.
+- Mật khẩu: `Ab1!`.
+- Xác nhận mật khẩu: `Ab1!`.
+
+**Lớp được kiểm tra:** EC08.
+
+**Kết quả mong đợi:** Hệ thống từ chối đăng ký vì mật khẩu không đáp ứng độ dài tối thiểu.
+
+Giá trị `Ab1!` có chữ hoa, chữ thường, chữ số và ký tự đặc biệt, nhưng chỉ có 4 ký tự. Do đó, test case này tập trung kiểm tra điều kiện độ dài.
+
+#### TC07 – Mật khẩu không có chữ hoa
+
+**Dữ liệu đầu vào:**
+
+- Họ và tên: Nguyễn Văn An.
+- Email: email hợp lệ, chưa tồn tại.
+- Mật khẩu: `abcdefg1!`.
+- Xác nhận mật khẩu: `abcdefg1!`.
+
+**Lớp được kiểm tra:** EC10.
+
+**Kết quả mong đợi:** Hệ thống từ chối đăng ký vì mật khẩu không có chữ hoa.
+
+Mật khẩu có đủ độ dài, chữ thường, chữ số và ký tự đặc biệt, nhưng không có chữ hoa.
+
+#### TC08 – Mật khẩu không có chữ thường
+
+**Dữ liệu đầu vào:**
+
+- Họ và tên: Nguyễn Văn An.
+- Email: email hợp lệ, chưa tồn tại.
+- Mật khẩu: `ABCDEFG1!`.
+- Xác nhận mật khẩu: `ABCDEFG1!`.
+
+**Lớp được kiểm tra:** EC12.
+
+**Kết quả mong đợi:** Hệ thống từ chối đăng ký vì mật khẩu không có chữ thường.
+
+#### TC09 – Mật khẩu không có chữ số
+
+**Dữ liệu đầu vào:**
+
+- Họ và tên: Nguyễn Văn An.
+- Email: email hợp lệ, chưa tồn tại.
+- Mật khẩu: `Abcdefg!`.
+- Xác nhận mật khẩu: `Abcdefg!`.
+
+**Lớp được kiểm tra:** EC14.
+
+**Kết quả mong đợi:** Hệ thống từ chối đăng ký vì mật khẩu không có chữ số.
+
+#### TC10 – Mật khẩu không có ký tự đặc biệt được chấp nhận
+
+**Dữ liệu đầu vào:**
+
+- Họ và tên: Nguyễn Văn An.
+- Email: email hợp lệ, chưa tồn tại.
+- Mật khẩu: `Abcdefg1`.
+- Xác nhận mật khẩu: `Abcdefg1`.
+
+**Lớp được kiểm tra:** EC16.
+
+**Kết quả mong đợi:** Hệ thống từ chối đăng ký vì mật khẩu không chứa ký tự đặc biệt được chấp nhận.
+
+#### TC11 – Bỏ trống xác nhận mật khẩu
+
+**Dữ liệu đầu vào:**
+
+- Họ và tên: Nguyễn Văn An.
+- Email: email hợp lệ, chưa tồn tại.
+- Mật khẩu: `Abcdef1!`.
+- Xác nhận mật khẩu: để trống.
+
+**Lớp được kiểm tra:** EC18.
+
+**Kết quả mong đợi:** Hệ thống từ chối đăng ký và thông báo trường xác nhận mật khẩu chưa được nhập.
+
+Khi chạy thực tế, cần ghi nhận cách hệ thống xử lý trường hợp này, vì hệ thống có thể kiểm tra đồng thời điều kiện bắt buộc và điều kiện khớp mật khẩu.
+
+#### TC12 – Mật khẩu xác nhận không khớp
+
+**Dữ liệu đầu vào:**
+
+- Họ và tên: Nguyễn Văn An.
+- Email: email hợp lệ, chưa tồn tại.
+- Mật khẩu: `Abcdef1!`.
+- Xác nhận mật khẩu: `Abcdef2!`.
+
+**Lớp được kiểm tra:** EC19.
+
+**Kết quả mong đợi:** Hệ thống từ chối đăng ký và thông báo hai mật khẩu không khớp.
+
+Cả hai mật khẩu đều đáp ứng điều kiện về độ dài và thành phần ký tự. Vì vậy, điều kiện không hợp lệ được kiểm tra ở đây là sự không khớp giữa hai trường.
+
+### 3.4. Đánh giá độ bao phủ các lớp tương đương
+
+Sau khi đối chiếu từng test case với tập phân hoạch ở Bước 2, tất cả các lớp từ EC01 đến EC19 đều có test case đại diện.
+
+- Các lớp Valid được bao phủ trong TC01.
+- Các lớp Invalid được kiểm tra lần lượt trong TC02 đến TC12.
+- Những dữ liệu dùng để kiểm tra lớp Invalid được thiết kế để hạn chế vi phạm nhiều điều kiện cùng lúc.
+
+Bộ test case này là bộ thiết kế ban đầu. Kết quả thực tế cần được xác nhận thông qua quá trình thực thi trên EShop. Nếu phát hiện điều kiện chưa được kiểm tra hoặc có cách xử lý khác nhau trong cùng một lớp, cần điều chỉnh lại phân hoạch và bổ sung test case tương ứng.
+
+
+
+
