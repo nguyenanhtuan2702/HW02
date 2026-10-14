@@ -153,6 +153,78 @@
 - Đánh dấu những thời điểm chưa có đủ thông tin để xác minh chính xác, tránh tự tạo timestamp không có căn cứ.
 
 ---
+### Lần sử dụng 8. Áp dụng Domain Testing và Boundary Value Analysis cho FR-09
+
+**Tên công cụ AI:** ChatGPT (OpenAI)
+
+**Ngày thực hiện:** 14/10/2026
+
+**Thời gian (Timestamp):** Sau 22:57, giờ Việt Nam (UTC+7). Cần đối chiếu lịch sử ChatGPT để xác định chính xác giờ và phút.
+
+**Mục tiêu sử dụng AI:** Hỗ trợ phân tích và thiết kế bộ test case cho FR-09 – Discount Coupons thuộc Pool B (Shopping Cart and Checkout) theo đúng trình tự Domain Testing và Boundary Value Analysis được giảng dạy trong môn Kiểm thử phần mềm.
+
+**Note: Lần này em sử dụng promt tổ hợp đã được sử dụng lúc làm từ FR1
+#### 1. Prompt đã sử dụng
+
+**Prompt 1 – Xác định Input/Output và điều kiện nghiệp vụ**
+
+> Dựa trên đặc tả FR-09 được cung cấp, chỉ xác định input variables, output variables và điều kiện nghiệp vụ. Chưa tạo test case. Với mỗi kết luận, chỉ ra câu trong đặc tả làm căn cứ. Nêu rõ những thông tin chưa được quy định.
+
+**Prompt 2 – Xác định các lớp tương đương**
+
+> Dựa trên input/output và đặc tả đã phân tích, thực hiện Step 2 Domain Testing. Lập bảng điều kiện, mã EC, mô tả miền Valid và Invalid. Không tự thêm ràng buộc không có trong đặc tả. Tách lớp khi có khả năng được xử lý khác nhau.
+
+**Prompt 3 – Lựa chọn test case đại diện**
+
+> Dựa trên bảng EC đã review, thực hiện Step 3. Chọn bộ test case đại diện, cho biết mỗi TC bao phủ EC nào. Các TC Invalid chỉ nên vi phạm một lớp Invalid tại một thời điểm. Giải thích vì sao tập test được chọn có thể bao phủ các lớp đã xác định.
+
+**Prompt 4 – Phân tích giá trị biên**
+
+> Thực hiện Step 4 Boundary Value Analysis trên các miền giá trị có biên được đặc tả. Xác định biên dưới, biên trên nếu có và chọn các giá trị ngay dưới, tại và ngay trên biên. Phân biệt test case thuộc BVA với test case chỉ dùng để kiểm tra lớp tương đương. Làm tương tự với FR-09 thuộc Pool 2, đồng thời ghi chú rõ từng phần cần dán vào file nào.
+
+#### 2. Đầu ra của AI
+
+AI đã hỗ trợ xây dựng nội dung cho hai file:
+
+**File 1: `features/FR-09-coupons/domain-testing.md`**
+
+- **Bước 1 – Xác định biến đầu vào và đầu ra:** Xác định mã giảm giá, tổng tiền đơn hàng, trạng thái đăng nhập, trạng thái hoạt động, ngày hết hạn, ngưỡng đơn hàng, loại mã, giá trị giảm và giới hạn lượt sử dụng.
+- Xác định năm điều kiện nghiệp vụ: mã tồn tại và đang hoạt động; mã còn hạn; tổng tiền đạt ngưỡng tối thiểu; người dùng có JWT hợp lệ; số lượt đã sử dụng chưa đạt giới hạn.
+- Xác định kết quả áp dụng mã, số tiền giảm, số tiền cuối cùng và phản hồi của hệ thống.
+- Ghi nhận các thông tin chưa được quy định rõ trong đặc tả, chẳng hạn quy tắc phân biệt chữ hoa/chữ thường của mã, làm tròn số tiền giảm, múi giờ và thời điểm tính lượt sử dụng.
+- **Bước 2 – Xác định lớp tương đương:** Xây dựng các lớp EC01–EC12 cho năm điều kiện nghiệp vụ và EC13–EC14 cho hai nhánh tính toán `percent` và `fixed`.
+- **Bước 3 – Lựa chọn test case:** Đề xuất 9 test case ban đầu, bao gồm áp dụng mã thành công, mã không tồn tại, mã không hoạt động, mã hết hạn, đơn hàng chưa đạt ngưỡng, JWT không hợp lệ và trường hợp đã sử dụng hết lượt.
+- Kiểm tra khả năng bao phủ các lớp tương đương và yêu cầu mỗi test case Invalid chỉ vi phạm một điều kiện tại một thời điểm.
+
+**File 2: `features/FR-09-coupons/bva.md`**
+
+- **Bước 4 – Boundary Value Analysis:** Xác định ba nhóm biên có thể kiểm tra là ngưỡng đơn hàng tối thiểu, hạn sử dụng và giới hạn lượt dùng.
+- Đề xuất 9 test case BVA, sử dụng các giá trị ngay dưới, tại và ngay trên từng biên.
+- Bổ sung bảng kết quả mong đợi, kết quả thực tế, trạng thái và bằng chứng.
+- Phân biệt các điều kiện đã được kiểm tra bằng lớp tương đương với các điều kiện có thể kiểm tra thông qua giá trị biên.
+- Hướng dẫn lưu file và tạo Git commit riêng cho Domain Testing và BVA.
+
+#### 3. Kết quả review của sinh viên
+
+Đầu ra AI được sử dụng làm bản thiết kế ban đầu, chưa được xem là bộ test case đã xác nhận đúng hoàn toàn hoặc đã thực thi thành công.
+
+Các nội dung cần kiểm tra lại gồm:
+
+1. Đối chiếu từng điều kiện nghiệp vụ với đặc tả FR-09 trong SRS chính thức.
+2. Xác minh dữ liệu của các mã `SAVE10`, `BIGBUY`, `VIP100` và `EXPIRED` trong môi trường kiểm thử.
+3. Kiểm tra trạng thái hoạt động, ngày hết hạn, ngưỡng đơn hàng và giới hạn lượt sử dụng thực tế của từng mã trước khi chạy test.
+4. Xác nhận cách hệ thống xử lý ngày hết hạn, đơn vị tiền tệ và số lượt đã sử dụng.
+5. Chỉ ghi nhận Pass hoặc Fail sau khi thực thi và so sánh kết quả thực tế với kết quả mong đợi.
+6. Ghi nhận bằng chứng và tạo GitHub Issue nếu xác minh được lỗi của hệ thống.
+
+#### 4. Đánh giá sơ bộ việc sử dụng AI
+
+AI hỗ trợ tổ chức quy trình kiểm thử theo từng bước, giảm công sức lập bảng phân hoạch và lựa chọn các giá trị đại diện. Tuy nhiên, kết quả vẫn phụ thuộc vào tính đầy đủ của đặc tả và dữ liệu kiểm thử.
+
+Sinh viên cần chủ động xác minh các giả định, rà soát độ bao phủ của EC, kiểm tra các điều kiện biên và thực thi trên ứng dụng thực tế. Những thông tin chưa được quy định trong SRS không được tự động xem là yêu cầu bắt buộc của hệ thống.
+
+**Trạng thái công việc:** Đã thiết kế bản nháp Domain Testing và BVA cho FR-09; kết quả thực thi và bằng chứng cần được cập nhật sau khi kiểm thử ứng dụng EShop.
+
 
 ## 3. Tổng kết việc sử dụng AI
 
