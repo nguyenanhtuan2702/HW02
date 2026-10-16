@@ -135,3 +135,4 @@ Lần chạy gốc được bảo toàn: `20261016-155435`. Các lần chạy b�
 ### Evidence chưa phân loại
 
 - Không có file screenshot/trace chưa phân loại trong các thư mục Playwright đã xử lý.
+- Một số test vẫn không có screenshot vì chúng kiểm tra API trực tiếp, nên evidence phù hợp là JSON/response, không phải ảnh trình duyệt trống: FR-01 TC04–TC10, FR-09 TC09-07, FR-17 TC17-05 và TC17-06. TC11–TC12 của FR-01 chưa được tự động hóa.
