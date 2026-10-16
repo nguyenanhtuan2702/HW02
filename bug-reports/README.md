@@ -1,6 +1,6 @@
-# HW02 — Báo cáo lỗi và bản nháp GitHub Issues
+# HW02 — Báo cáo lỗi và trạng thái GitHub Issues
 
-Tài liệu này tổng hợp các lỗi được đối chiếu giữa kết quả thực thi kiểm thử, bằng chứng và SRS. Mỗi file `BR-*.md` cũng là nội dung Markdown dự thảo để rà soát trước khi đăng thành GitHub Issue. Chưa có issue nào được tạo trực tuyến.
+Tài liệu này tổng hợp các lỗi được đối chiếu giữa kết quả thực thi kiểm thử, bằng chứng và SRS. Mỗi file `BR-*.md` lưu báo cáo local và nội dung tương ứng với GitHub Issue. Run ID mới nhất trong [`github-issues.csv`](./github-issues.csv) ghi nhận cả 10 Issue đã được tạo trong `nguyenanhtuan2702/eshop-sut`; 7 Issue có screenshot phù hợp được đính kèm và 3 Issue API-only được ghi rõ không có ảnh phù hợp.
 
 ## Nguồn và phương pháp kết luận
 
@@ -17,18 +17,18 @@ Tài liệu này tổng hợp các lỗi được đối chiếu giữa kết qu
 
 ## Danh sách lỗi đã xác minh
 
-| Mã lỗi | Tính năng | Ca kiểm thử liên quan | Vấn đề | Ảnh chụp màn hình |
-|---|---|---|---|---|
-| [BR-FR01-01](./BR-FR01-01.md) | FR-01 | TC01, BVA-FR01-02, BVA-FR01-03 | Giao diện từ chối mật khẩu đáp ứng SRS | Có |
-| [BR-FR01-02](./BR-FR01-02.md) | FR-01 | TC01; TC11/TC12 chưa tự động hóa | Biểu mẫu đăng ký thiếu trường xác nhận mật khẩu | Có |
-| [BR-FR01-03](./BR-FR01-03.md) | FR-01 | TC04–TC10 | API chấp nhận email/mật khẩu vi phạm điều kiện FR-01 | Không có; có JSON/trace API |
-| [BR-FR09-01](./BR-FR09-01.md) | FR-09 | TC09-01 | Phép tính giảm giá phần trăm cho kết quả sai | Có |
-| [BR-FR09-02](./BR-FR09-02.md) | FR-09 | TC09-06, TC09-07 | API chấp nhận yêu cầu thiếu JWT hoặc có JWT không hợp lệ | TC09-06 có; TC09-07 chỉ kiểm thử API |
-| [BR-FR09-03](./BR-FR09-03.md) | FR-09 | TC09-09, BVA-FR09-02 | Từ chối đơn hàng có giá trị đúng bằng ngưỡng tối thiểu | Có |
-| [BR-FR17-01](./BR-FR17-01.md) | FR-17 | TC17-05, TC17-06 | API chấp nhận thiếu `type` hoặc `type` không nằm trong tập cho phép | Không có; có JSON/trace API |
-| [BR-FR17-02](./BR-FR17-02.md) | FR-17 | TC17-07, TC17-08, BVA-FR17-01/-02/-04/-05 | Chấp nhận `discount_value` bằng 0 hoặc số âm | Có |
-| [BR-FR17-03](./BR-FR17-03.md) | FR-17 | TC17-10, BVA-FR17-07 | Chấp nhận `min_order_amount` âm | Có |
-| [BR-FR11-01](./BR-FR11-01.md) | FR-11 | TC03, TC10 | Không dùng màu sắc để phân biệt trạng thái đơn hàng | Có |
+| Mã lỗi | Tính năng | Ca kiểm thử liên quan | Vấn đề | GitHub Issue | Ảnh đính kèm |
+|---|---|---|---|---|---|
+| [BR-FR01-01](./BR-FR01-01.md) | FR-01 | TC01, BVA-FR01-02, BVA-FR01-03 | Giao diện từ chối mật khẩu đáp ứng SRS | [#1](https://github.com/nguyenanhtuan2702/eshop-sut/issues/1) | Có |
+| [BR-FR01-02](./BR-FR01-02.md) | FR-01 | TC01; TC11/TC12 chưa tự động hóa | Biểu mẫu đăng ký thiếu trường xác nhận mật khẩu | [#2](https://github.com/nguyenanhtuan2702/eshop-sut/issues/2) | Có |
+| [BR-FR01-03](./BR-FR01-03.md) | FR-01 | TC04–TC10 | API chấp nhận email/mật khẩu vi phạm điều kiện FR-01 | [#3](https://github.com/nguyenanhtuan2702/eshop-sut/issues/3) | Không có ảnh phù hợp; có JSON/trace API |
+| [BR-FR09-01](./BR-FR09-01.md) | FR-09 | TC09-01 | Phép tính giảm giá phần trăm cho kết quả sai | [#4](https://github.com/nguyenanhtuan2702/eshop-sut/issues/4) | Có |
+| [BR-FR09-02](./BR-FR09-02.md) | FR-09 | TC09-06, TC09-07 | API chấp nhận yêu cầu thiếu JWT hoặc có JWT không hợp lệ | [#5](https://github.com/nguyenanhtuan2702/eshop-sut/issues/5) | Không có ảnh phù hợp; có JSON/trace API |
+| [BR-FR09-03](./BR-FR09-03.md) | FR-09 | TC09-09, BVA-FR09-02 | Từ chối đơn hàng có giá trị đúng bằng ngưỡng tối thiểu | [#6](https://github.com/nguyenanhtuan2702/eshop-sut/issues/6) | Có |
+| [BR-FR17-01](./BR-FR17-01.md) | FR-17 | TC17-05, TC17-06 | API chấp nhận thiếu `type` hoặc `type` không nằm trong tập cho phép | [#7](https://github.com/nguyenanhtuan2702/eshop-sut/issues/7) | Không có ảnh phù hợp; có JSON/trace API |
+| [BR-FR17-02](./BR-FR17-02.md) | FR-17 | TC17-07, TC17-08, BVA-FR17-01/-02/-04/-05 | Chấp nhận `discount_value` bằng 0 hoặc số âm | [#8](https://github.com/nguyenanhtuan2702/eshop-sut/issues/8) | Có |
+| [BR-FR17-03](./BR-FR17-03.md) | FR-17 | TC17-10, BVA-FR17-07 | Chấp nhận `min_order_amount` âm | [#9](https://github.com/nguyenanhtuan2702/eshop-sut/issues/9) | Có |
+| [BR-FR11-01](./BR-FR11-01.md) | FR-11 | TC03, TC10 | Không dùng màu sắc để phân biệt trạng thái đơn hàng | [#10](https://github.com/nguyenanhtuan2702/eshop-sut/issues/10) | Có |
 
 **Tổng cộng:** 10 lỗi đã được xác minh từ các bằng chứng hiện có; 27 ca kiểm thử FAIL được liên kết với ít nhất một lỗi (TC01 liên quan đến hai lỗi khác nhau). Số ca kiểm thử được đếm duy nhất là 27.
 
@@ -42,6 +42,6 @@ Tài liệu này tổng hợp các lỗi được đối chiếu giữa kết qu
 
 **Tổng cần thêm dữ liệu/kiểm thử:** 7 ca kiểm thử (2 chưa tự động hóa, 5 bị chặn). Không tạo lỗi ứng dụng từ các ca BLOCKED. FR-09 TC09-06 được xác minh bằng trace của yêu cầu không có `Authorization`; ảnh chụp cho thấy giao diện đang đăng nhập nên đây là giới hạn của ảnh, không phải lỗi môi trường.
 
-## Các GitHub Issue hiện có
+## Trạng thái đăng Issue
 
-Đã tìm kiếm issue trong `nguyenanhtuan2702/HW02` bằng các nhóm từ khóa về FR-01 registration, FR-09 coupon, FR-17 coupon CRUD và FR-11 order status; mỗi nhóm tìm kiếm trả về 0 kết quả. Trước khi tạo các báo cáo này, thư mục cục bộ `bug-reports/` chỉ có `.gitkeep`. Không tìm thấy issue trùng trong phạm vi truy vấn đó; chưa đăng issue trực tuyến.
+Run ID mới nhất `20261017-012947` trong CSV ghi nhận trạng thái `CREATED` và URL cho cả 10 Bug ID. Bảy Issue có trạng thái `ATTACHED`; `BR-FR01-03`, `BR-FR09-02` và `BR-FR17-01` có trạng thái `NO_MATCHING_SCREENSHOT` vì bằng chứng phù hợp là JSON/trace API. CSV giữ lại lịch sử các lần chạy trước (precheck thất bại và DryRun); khi tổng hợp trạng thái hiện tại, dùng Run ID mới nhất cho từng Bug ID. Danh sách trên phản ánh log đăng của script; cần mở URL để kiểm tra trạng thái trực tiếp nếu GitHub có thay đổi sau lượt chạy đó.
