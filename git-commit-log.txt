@@ -1,0 +1,19 @@
+﻿6c2d1c3 | 2026-10-14 21:58:18 +0700 | Nguyen Anh Tuan | chore: initialize HW02 report structure
+618c5a4 | 2026-10-14 22:17:19 +0700 | Nguyen Anh Tuan | docs(FR-01): xac dinh input va output
+71f918e | 2026-10-14 22:29:25 +0700 | Nguyen Anh Tuan | docs(FR-01): define equivalence classes
+041115d | 2026-10-14 22:33:14 +0700 | Nguyen Anh Tuan | docs(FR-01): select representative test cases
+f8d9f33 | 2026-10-14 22:55:06 +0700 | Nguyen Anh Tuan | docs(FR-01): add boundary value test cases
+4434032 | 2026-10-14 23:23:37 +0700 | Nguyen Anh Tuan | docs(FR-09): add domain testing analysi and add boundary value analysis
+e02fb46 | 2026-10-14 23:34:47 +0700 | Nguyen Anh Tuan | docs(FR-17): add domain testing analysis
+81c976f | 2026-10-14 23:35:34 +0700 | Nguyen Anh Tuan | docs(FR-17): add boundary value analysis
+9e7ec6a | 2026-10-14 23:45:30 +0700 | Nguyen Anh Tuan | Audit part 2
+357f1f2 | 2026-10-16 13:53:31 +0700 | Nguyen Anh Tuan | docs(FR-11)
+23d9b44 | 2026-10-16 16:51:14 +0700 | Nguyen Anh Tuan | Autotest and collect evidences
+558a85d | 2026-10-16 19:18:09 +0700 | Nguyen Anh Tuan | Thay đổi cấu trúc file
+d49445c | 2026-10-16 20:31:14 +0700 | Nguyen Anh Tuan | Kiểm thử thực tế và bổ sung evidences cho FR 11
+84fa32b | 2026-10-16 21:47:48 +0700 | Nguyen Anh Tuan | Phat triển agent skills và đồng bộ file
+a82c5da | 2026-10-16 22:26:57 +0700 | Nguyen Anh Tuan | AI analyst gap
+5f036a9 | 2026-10-16 23:35:23 +0700 | Nguyen Anh Tuan | AI audit
+ae9e691 | 2026-10-16 23:52:26 +0700 | Nguyen Anh Tuan | Hoàn thiện phần AI critque
+e8b6882 | 2026-10-17 00:20:45 +0700 | Nguyen Anh Tuan | Hoàn thiện Báo cáo
+d3cf434 | 2026-10-17 01:38:35 +0700 | Nguyen Anh Tuan | Tạo bug issue trên github nhóm
