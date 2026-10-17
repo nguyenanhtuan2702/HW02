@@ -125,16 +125,3 @@ Sinh viên Nguyễn Anh Tuấn (MSSV 23120184) xác nhận điểm tự đánh g
 | 5 | Agent Skills | 10 | 10 |
 |  | **Tổng** | **100** | **100** |
 
-## 8. Checklist trước khi nộp
-
-- [x] Hoàn tất và rà soát `report.md`.
-- [x] Xuất `report.pdf`.
-- [x] Hoàn tất `ai-audit.md` và xuất PDF.
-- [x] Gộp AI Critique thành một đoạn, giữ trong giới hạn 200–300 từ và đồng bộ PDF.
-- [x] Lập 10 bug reports dạng Markdown local.
-- [x] Ghi nhận 10 Bug Reports trên GitHub Issues; đính kèm ảnh phù hợp cho 7 issue và ghi lý do không có ảnh cho 3 issue API-only.
-- [x] Tạo Agent Skill cùng hướng dẫn và tài liệu demo FR-01.
-- [x] Quay video demo Agent Skill, lưu file MP4, bổ sung liên kết YouTube; sinh viên xác nhận video PASS.
-- [x] Đồng bộ `git-commit-log.txt` với 21 commit đến HEAD `351c68b`.
-- [x] Chốt điểm tự đánh giá 100/100 và bổ sung MSSV 23120184.
-- [ ] Kiểm tra tên file ZIP và toàn bộ nội dung trước khi nộp (chưa xác nhận có ZIP tổng hợp; các ZIP hiện thấy là trace evidence).

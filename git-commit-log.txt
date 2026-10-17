@@ -19,3 +19,4 @@ e8b6882 | 2026-10-17 00:20:45 +0700 | Nguyen Anh Tuan | Hoàn thiện Báo cáo
 d3cf434 | 2026-10-17 01:38:35 +0700 | Nguyen Anh Tuan | Tạo bug issue trên github nhóm
 0ddc60b | 2026-10-17 01:45:03 +0700 | Nguyen Anh Tuan | Chỉnh lại phần bug rp
 351c68b | 2026-10-17 09:40:05 +0700 | Nguyen Anh Tuan | Bổ sung video
+2c8262c | 2026-10-17 10:03:45 +0700 | Nguyen Anh Tuan | Kiểm tra trước khi nộp
