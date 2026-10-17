@@ -1,5 +1,7 @@
 # HW02 — Domain Testing và BVA trên EShop
 
+**Sinh viên:** Nguyễn Anh Tuấn · **MSSV:** 23120184 · **Điểm tự đánh giá:** 100/100
+
 ## Mục lục
 
 - [1. Giới thiệu](#1-gioi-thieu)
@@ -19,9 +21,9 @@ Các sản phẩm chính gồm test design và execution results cho bốn featu
 
 ### Trạng thái hiện tại
 
-**Đã hoàn thành:** test design, các lượt kiểm thử đã ghi nhận và evidence cho bốn feature; `report.md` và PDF; AI Audit và PDF; AI Critique đúng giới hạn 200–300 từ và PDF; AI Gap Analysis; 10 bug reports Markdown local; Agent Skill cùng tài liệu hướng dẫn/demo và video demo. Log mới nhất của script ghi nhận 10 GitHub Issues đã tạo trong `nguyenanhtuan2702/eshop-sut`; 7 issue có screenshot phù hợp được đính kèm, 3 issue API-only được ghi rõ không có ảnh phù hợp.
+**Đã hoàn thành:** test design, các lượt kiểm thử đã ghi nhận và evidence cho bốn feature; `report.md` và PDF; AI Audit và PDF; AI Critique một đoạn trong giới hạn 200–300 từ cùng PDF đã đồng bộ; AI Gap Analysis đã cập nhật; 10 bug reports Markdown local; Agent Skill cùng tài liệu hướng dẫn/demo và video demo (sinh viên xác nhận PASS). README và commit log đã đồng bộ đến HEAD `351c68b`. Log mới nhất của script ghi nhận 10 GitHub Issues đã tạo trong `nguyenanhtuan2702/eshop-sut`; 7 issue có screenshot phù hợp được đính kèm, 3 issue API-only được ghi rõ không có ảnh phù hợp.
 
-**Còn cần làm:** cập nhật commit log; tự chấm điểm; kiểm tra và tạo ZIP tổng hợp để nộp.
+**Còn cần làm:** đối chiếu đề HW02 gốc; xác minh trực tiếp GitHub Issues; kiểm tra liên kết sau khi đóng gói và tạo ZIP tổng hợp để nộp.
 
 Trạng thái GitHub Issues ở trên được đối chiếu theo Run ID `20261017-012947` trong [log đăng Issues](bug-reports/github-issues.csv). Lượt rà soát README này không xác minh lại danh sách trên GitHub vì API không kết nối được.
 
@@ -88,19 +90,19 @@ Mười bug được nhóm theo hành vi/nguyên nhân và liên kết với 27 
 |---|---|---|
 | Báo cáo chính | [report.md](report.md) · [report.pdf](report.pdf) | Markdown và PDF đã có |
 | AI Audit | [ai-audit.md](ai-audit.md) · [ai-audit.pdf](ai-audit.pdf) | Markdown và PDF đã có |
-| AI Critique | [ai-critique.md](ai-critique.md) · [ai-critique.pdf](ai-critique.pdf) | 270 từ tính cả tiêu đề; Markdown và PDF đã có |
-| AI Gap Analysis | [ai-gap-analysis.md](ai-gap-analysis.md) | Đã có Markdown |
+| AI Critique | [ai-critique.md](ai-critique.md) · [ai-critique.pdf](ai-critique.pdf) | Thân bài 256 từ theo cách đếm khoảng trắng, gộp thành một đoạn; Markdown và PDF đồng bộ |
+| AI Gap Analysis | [ai-gap-analysis.md](ai-gap-analysis.md) | Đã cập nhật nhận định về AI Critique và giới hạn quy nguồn |
 | Bug reports | [Index và 10 báo cáo](bug-reports/README.md) | CSV ghi nhận 10 Issue đã tạo; 7 ảnh đính kèm, 3 API-only không có ảnh phù hợp |
 | Script đăng bug reports | [publish-bug-reports.ps1](scripts/publish-bug-reports.ps1) · [CSV kết quả](bug-reports/github-issues.csv) | Mặc định DryRun; log lưu theo từng Bug ID và từng lượt chạy |
 | Evidence | [Evidence index](evidence/evidence-index.md) | FR-11 ảnh được liên kết trong execution report và mục 2 |
 | Agent Skill | [SKILL.md](.github/skills/eshop-domain-bva-testing/SKILL.md) | Bản Skill trong workspace |
 | Hướng dẫn Skill | [agent-skills/README.md](agent-skills/README.md) | Đã có |
 | Kịch bản demo | [demo-plan.md](agent-skills/demo-plan.md) | Có kịch bản và video demo |
-| Video demo Agent Skill | [YouTube](https://www.youtube.com/watch?v=Fi23mSQEM7M) · [Video local](agent-skills/demo/HW02_DEMO.mp4) | Bản đăng YouTube và file MP4 trong workspace |
+| Video demo Agent Skill | [YouTube](https://www.youtube.com/watch?v=Fi23mSQEM7M) · [Video local](agent-skills/demo/HW02_DEMO.mp4) | Sinh viên xác nhận video PASS; file MP4 có trong workspace |
 | Demo/review FR-01 | [Skill validation](agent-skills/demo/FR-01-skill-validation.md) · [Phân tích minh họa](agent-skills/demo/FR-01-domain-bva-analysis.md) | Tài liệu phân tích; không thay execution result |
-| Git commit log | [git-commit-log.txt](git-commit-log.txt) | File hiện có nhưng đang rỗng, cần cập nhật |
+| Git commit log | [git-commit-log.txt](git-commit-log.txt) | Đủ 21 commit, đồng bộ đến HEAD `351c68b` |
 
-Domain Testing, BVA và execution results của từng feature được liên kết trực tiếp trong [bảng phạm vi](#2-pham-vi-kiem-thu). Không tìm thấy PDF đề bài trong workspace; bảng tự đánh giá bên dưới giữ nguyên thang điểm được nêu trong yêu cầu HW02.
+Domain Testing, BVA và execution results của từng feature được liên kết trực tiếp trong [bảng phạm vi](#2-pham-vi-kiem-thu). Không tìm thấy PDF đề bài trong workspace. Điểm 100/100 dưới đây do sinh viên xác nhận.
 
 ## 6. Agent Skill và video demo
 
@@ -108,13 +110,15 @@ Skill [`eshop-domain-bva-testing`](.github/skills/eshop-domain-bva-testing/SKILL
 
 **Video demo:** [Xem trên YouTube](https://www.youtube.com/watch?v=Fi23mSQEM7M) · [Mở file MP4 trong workspace](agent-skills/demo/HW02_DEMO.mp4). Kịch bản và tài liệu minh họa FR-01 nằm trong [`agent-skills/`](agent-skills/README.md).
 
+**Trạng thái video:** PASS theo xác nhận của sinh viên.
+
 ## 7. Tự đánh giá
 
-Điểm tự đánh giá được để trống theo yêu cầu để sinh viên tự quyết định.
+Sinh viên Nguyễn Anh Tuấn (MSSV 23120184) xác nhận điểm tự đánh giá là **100/100**.
 
 | STT | Tiêu chí | Điểm tối đa | Điểm tự đánh giá |
 |---:|---|---:|---|
-| 1 | Feature A – Domain Testing và BVA | 25 | 25
+| 1 | Feature A – Domain Testing và BVA | 25 | 25 |
 | 2 | Feature B – Domain Testing và BVA | 25 | 25 |
 | 3 | Feature C – Domain Testing và BVA | 25 | 25 |
 | 4 | Feature D – Mobile, Domain Testing và BVA | 15 | 15 |
@@ -126,11 +130,11 @@ Skill [`eshop-domain-bva-testing`](.github/skills/eshop-domain-bva-testing/SKILL
 - [x] Hoàn tất và rà soát `report.md`.
 - [x] Xuất `report.pdf`.
 - [x] Hoàn tất `ai-audit.md` và xuất PDF.
-- [x] Hoàn tất AI Critique đúng yêu cầu 200–300 từ và xuất PDF.
+- [x] Gộp AI Critique thành một đoạn, giữ trong giới hạn 200–300 từ và đồng bộ PDF.
 - [x] Lập 10 bug reports dạng Markdown local.
 - [x] Ghi nhận 10 Bug Reports trên GitHub Issues; đính kèm ảnh phù hợp cho 7 issue và ghi lý do không có ảnh cho 3 issue API-only.
 - [x] Tạo Agent Skill cùng hướng dẫn và tài liệu demo FR-01.
-- [x] Quay video demo Agent Skill, lưu file MP4 và bổ sung liên kết YouTube.
-- [ ] Hoàn thành `git-commit-log.txt` (file hiện rỗng).
-- [ ] Chốt điểm tự đánh giá.
+- [x] Quay video demo Agent Skill, lưu file MP4, bổ sung liên kết YouTube; sinh viên xác nhận video PASS.
+- [x] Đồng bộ `git-commit-log.txt` với 21 commit đến HEAD `351c68b`.
+- [x] Chốt điểm tự đánh giá 100/100 và bổ sung MSSV 23120184.
 - [ ] Kiểm tra tên file ZIP và toàn bộ nội dung trước khi nộp (chưa xác nhận có ZIP tổng hợp; các ZIP hiện thấy là trace evidence).
