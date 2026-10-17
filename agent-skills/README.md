@@ -17,7 +17,9 @@ agent-skills/
 ├── README.md                         # Tài liệu hướng dẫn và mô tả để nộp HW02
 ├── demo-plan.md                      # Kịch bản thực hiện demo/video trên FR-01
 └── demo/
-    └── FR-01-domain-bva-analysis.md  # Đầu ra minh họa mới; không phải kết quả thực thi
+    ├── HW02_DEMO.mp4                 # Video demo Agent Skill
+    ├── FR-01-domain-bva-analysis.md  # Đầu ra minh họa mới; không phải kết quả thực thi
+    └── FR-01-skill-validation.md     # Ghi nhận kiểm tra Skill; không phải kết quả thực thi
 ```
 
 ## Khi nào sử dụng
@@ -92,4 +94,7 @@ Tài liệu Markdown bằng tiếng Việt, phù hợp HW02, có phạm vi/ngu�
 ## Tài liệu demo
 
 - [Kịch bản demo/video FR-01](./demo-plan.md)
+- [Video demo trên YouTube](https://www.youtube.com/watch?v=Fi23mSQEM7M)
+- [File video MP4 trong workspace](./demo/HW02_DEMO.mp4)
 - [Phân tích minh họa FR-01](./demo/FR-01-domain-bva-analysis.md)
+- [Ghi nhận kiểm tra Skill](./demo/FR-01-skill-validation.md)

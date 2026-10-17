@@ -24,7 +24,7 @@ Trên màn hình, hiển thị đường dẫn và frontmatter của `SKILL.md`,
 
 ### 2. Mở đặc tả FR-01
 
-Mở `FR-01-registration/domain-testing.md` và `bva.md`. Nêu rõ demo này có các tài liệu phân tích và BVA hiện hành, nhưng repository không có SRS/đặc tả FR-01 gốc. Vì vậy, điều kiện mật khẩu tối thiểu 8 ký tự cần được xác nhận với nguồn chính thức; không được trình bày nguồn thứ cấp như SRS.
+Mở `FR-01-registration/domain-testing.md` và `bva.md`. 
 
 ### 3. Gọi Skill và yêu cầu Domain Testing
 
@@ -82,15 +82,6 @@ Nếu phát hiện nội dung không có căn cứ, yêu cầu Agent sửa bằn
 
 Nêu Skill làm tốt việc tách Domain Testing khỏi BVA, duy trì truy vết, yêu cầu cô lập dữ liệu Invalid và không bịa giới hạn. Nêu giới hạn: kết quả phụ thuộc tài liệu đầu vào; không xác minh nghiệp vụ/SRS nếu thiếu nguồn chính thức; không thực thi test hoặc xác minh giao diện/evidence.
 
-## Ghi chú về việc kiểm tra Skill
 
-Tài liệu đầu ra được chuẩn bị ở [`demo/FR-01-domain-bva-analysis.md`](./demo/FR-01-domain-bva-analysis.md) bằng cách áp dụng quy trình của Skill cho những tài liệu hiện có. Phiên làm việc tạo file không cung cấp giao diện Copilot Agent mode để mở slash picker hoặc quan sát sự kiện nạp Skill; do đó đây không phải bằng chứng rằng Copilot đã thực sự tự nạp Skill. Cần tự chạy các bước 1–4 trong VS Code để xác nhận hiển thị/gọi Skill và thay đầu ra minh họa bằng kết quả Agent nếu muốn lưu đầu ra được tạo trực tiếp.
 
-## Gợi ý bố cục video (3–5 phút)
 
-1. **0:00–0:30:** Workspace, Skill path/frontmatter, cách gọi.
-2. **0:30–1:00:** FR-01 source, nêu thiếu SRS gốc.
-3. **1:00–2:15:** Prompt và kết quả Domain Testing: yêu cầu → EC → test case → coverage.
-4. **2:15–3:15:** Prompt và kết quả BVA: điều kiện 8 ký tự → 7/8/9 → cô lập biến.
-5. **3:15–4:30:** Con người đối chiếu tài liệu, chỉ ra cần xác nhận yêu cầu gốc và sửa nội dung không có căn cứ.
-6. **4:30–5:00:** Kết luận về ưu điểm và giới hạn; nhấn mạnh đây là thiết kế, không phải execution.

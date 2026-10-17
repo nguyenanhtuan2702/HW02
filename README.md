@@ -19,9 +19,9 @@ Các sản phẩm chính gồm test design và execution results cho bốn featu
 
 ### Trạng thái hiện tại
 
-**Đã hoàn thành:** test design, các lượt kiểm thử đã ghi nhận và evidence cho bốn feature; `report.md` và PDF; AI Audit và PDF; AI Critique đúng giới hạn 200–300 từ và PDF; AI Gap Analysis; 10 bug reports Markdown local; Agent Skill cùng tài liệu hướng dẫn/demo. Log mới nhất của script ghi nhận 10 GitHub Issues đã tạo trong `nguyenanhtuan2702/eshop-sut`; 7 issue có screenshot phù hợp được đính kèm, 3 issue API-only được ghi rõ không có ảnh phù hợp.
+**Đã hoàn thành:** test design, các lượt kiểm thử đã ghi nhận và evidence cho bốn feature; `report.md` và PDF; AI Audit và PDF; AI Critique đúng giới hạn 200–300 từ và PDF; AI Gap Analysis; 10 bug reports Markdown local; Agent Skill cùng tài liệu hướng dẫn/demo và video demo. Log mới nhất của script ghi nhận 10 GitHub Issues đã tạo trong `nguyenanhtuan2702/eshop-sut`; 7 issue có screenshot phù hợp được đính kèm, 3 issue API-only được ghi rõ không có ảnh phù hợp.
 
-**Còn cần làm:** quay video demo Skill; cập nhật commit log; tự chấm điểm; kiểm tra và tạo ZIP tổng hợp để nộp.
+**Còn cần làm:** cập nhật commit log; tự chấm điểm; kiểm tra và tạo ZIP tổng hợp để nộp.
 
 Trạng thái GitHub Issues ở trên được đối chiếu theo Run ID `20261017-012947` trong [log đăng Issues](bug-reports/github-issues.csv). Lượt rà soát README này không xác minh lại danh sách trên GitHub vì API không kết nối được.
 
@@ -95,7 +95,8 @@ Mười bug được nhóm theo hành vi/nguyên nhân và liên kết với 27 
 | Evidence | [Evidence index](evidence/evidence-index.md) | FR-11 ảnh được liên kết trong execution report và mục 2 |
 | Agent Skill | [SKILL.md](.github/skills/eshop-domain-bva-testing/SKILL.md) | Bản Skill trong workspace |
 | Hướng dẫn Skill | [agent-skills/README.md](agent-skills/README.md) | Đã có |
-| Kịch bản demo | [demo-plan.md](agent-skills/demo-plan.md) | Có kịch bản; chưa có video |
+| Kịch bản demo | [demo-plan.md](agent-skills/demo-plan.md) | Có kịch bản và video demo |
+| Video demo Agent Skill | [YouTube](https://www.youtube.com/watch?v=Fi23mSQEM7M) · [Video local](agent-skills/demo/HW02_DEMO.mp4) | Bản đăng YouTube và file MP4 trong workspace |
 | Demo/review FR-01 | [Skill validation](agent-skills/demo/FR-01-skill-validation.md) · [Phân tích minh họa](agent-skills/demo/FR-01-domain-bva-analysis.md) | Tài liệu phân tích; không thay execution result |
 | Git commit log | [git-commit-log.txt](git-commit-log.txt) | File hiện có nhưng đang rỗng, cần cập nhật |
 
@@ -103,9 +104,9 @@ Domain Testing, BVA và execution results của từng feature được liên k�
 
 ## 6. Agent Skill và video demo
 
-Skill [`eshop-domain-bva-testing`](.github/skills/eshop-domain-bva-testing/SKILL.md) hỗ trợ đọc yêu cầu có truy vết, phân lớp tương đương, chọn test case đại diện và áp dụng BVA trên các giới hạn có căn cứ. [Hướng dẫn Skill](agent-skills/README.md), [kịch bản demo](agent-skills/demo-plan.md) và hai tài liệu demo FR-01 được lưu trong `agent-skills/`.
+Skill [`eshop-domain-bva-testing`](.github/skills/eshop-domain-bva-testing/SKILL.md) hỗ trợ đọc yêu cầu có truy vết, phân lớp tương đương, chọn test case đại diện và áp dụng BVA trên các giới hạn có căn cứ. [Hướng dẫn Skill](agent-skills/README.md), [kịch bản demo](agent-skills/demo-plan.md), video demo và tài liệu minh họa FR-01 được lưu trong `agent-skills/`.
 
-**Video demo:** Chưa có file video hoặc URL demo trong workspace. Cần quay video theo kịch bản và bổ sung liên kết trước khi nộp; README không tạo URL thay thế.
+**Video demo:** [Xem trên YouTube](https://www.youtube.com/watch?v=Fi23mSQEM7M) · [Mở file MP4 trong workspace](agent-skills/demo/HW02_DEMO.mp4). Kịch bản và tài liệu minh họa FR-01 nằm trong [`agent-skills/`](agent-skills/README.md).
 
 ## 7. Tự đánh giá
 
@@ -113,12 +114,12 @@ Skill [`eshop-domain-bva-testing`](.github/skills/eshop-domain-bva-testing/SKILL
 
 | STT | Tiêu chí | Điểm tối đa | Điểm tự đánh giá |
 |---:|---|---:|---|
-| 1 | Feature A – Domain Testing và BVA | 25 | Chưa tự đánh giá |
-| 2 | Feature B – Domain Testing và BVA | 25 | Chưa tự đánh giá |
-| 3 | Feature C – Domain Testing và BVA | 25 | Chưa tự đánh giá |
-| 4 | Feature D – Mobile, Domain Testing và BVA | 15 | Chưa tự đánh giá |
-| 5 | Agent Skills | 10 | Chưa tự đánh giá |
-|  | **Tổng** | **100** | **Chưa chốt** |
+| 1 | Feature A – Domain Testing và BVA | 25 | 25
+| 2 | Feature B – Domain Testing và BVA | 25 | 25 |
+| 3 | Feature C – Domain Testing và BVA | 25 | 25 |
+| 4 | Feature D – Mobile, Domain Testing và BVA | 15 | 15 |
+| 5 | Agent Skills | 10 | 10 |
+|  | **Tổng** | **100** | **100** |
 
 ## 8. Checklist trước khi nộp
 
@@ -129,7 +130,7 @@ Skill [`eshop-domain-bva-testing`](.github/skills/eshop-domain-bva-testing/SKILL
 - [x] Lập 10 bug reports dạng Markdown local.
 - [x] Ghi nhận 10 Bug Reports trên GitHub Issues; đính kèm ảnh phù hợp cho 7 issue và ghi lý do không có ảnh cho 3 issue API-only.
 - [x] Tạo Agent Skill cùng hướng dẫn và tài liệu demo FR-01.
-- [ ] Quay video demo Agent Skill và thêm liên kết.
+- [x] Quay video demo Agent Skill, lưu file MP4 và bổ sung liên kết YouTube.
 - [ ] Hoàn thành `git-commit-log.txt` (file hiện rỗng).
 - [ ] Chốt điểm tự đánh giá.
 - [ ] Kiểm tra tên file ZIP và toàn bộ nội dung trước khi nộp (chưa xác nhận có ZIP tổng hợp; các ZIP hiện thấy là trace evidence).
